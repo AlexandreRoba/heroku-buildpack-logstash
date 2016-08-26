@@ -1,7 +1,2 @@
 #!/bin/sh
-
-cat << EOF
----
-default_process_types:
-  web: logstash agent -f logstash.conf
-EOF
+echo "--- {}"
