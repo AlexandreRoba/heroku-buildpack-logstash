@@ -69,4 +69,4 @@ echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' > $INIT_SCRIPT
 
 echo "Parsing and replacing in the logstash.conf file the environment variables"
 echo "Environment variables should be defined as $VARIABLENAME"
-envsubst < "$BUILD_DIR/logstash.conf" "$BUILD_DIR/logstash.conf"
+sed -e "s/\${PORT}/${PORT}/" "$BUILD_DIR/logstash.conf" > "$BUILD_DIR/logstash.conf"
